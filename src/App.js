@@ -1,24 +1,69 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import ResponsiveDrawer from './Mui/Sidebar';
+import Dashboard from './Components/Dashboard';
+import Comp from './Components/Components';
+import { Switch } from 'react-router-dom/cjs/react-router-dom.min';
+import { Route } from 'react-router-dom/cjs/react-router-dom';
+import { Box } from '@mui/material';
+
+import Charts from './Components/Charts';
+import Login from './Components/LoginPage';
+import Utilities from './Components/Utilities';
+
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Box>
+    
+      
+      
+
+<Switch>
+       
+        <Route exact path="/">
+        <Dashboard />
+        </Route>
+
+    
+
+        <Route path="/components">
+        <Comp />
+        </Route>
+
+        <Route path="/utilities">
+        <Utilities />
+        </Route>
+
+        <Route path="/login">
+        <Login />
+        </Route>
+
+        <Route path="/charts">
+        <Charts />
+        </Route>
+
+      </Switch>
+      {/* <Switch>
+
+      <Route exact path="/">
+             
+        <Dashboard
+          
+        />
+      </Route>
+
+      <Route path="/components">
+        <Components
+          
+        />
+      </Route>
+
+    </Switch> */}
+
+    
+    </Box>
   );
 }
 
